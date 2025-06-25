@@ -133,7 +133,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="services" className="bg-gray-50 scroll-mt-32">
+      <section id="products" className="bg-gray-50 scroll-mt-32">
         <div>
           <ServicesSection />
         </div>
