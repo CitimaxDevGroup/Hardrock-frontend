@@ -10,55 +10,46 @@ import ContactSection from "./ContactSection";
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-  <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-    <div className="flex items-center space-x-2">
-      {/* Brand text with custom font */}
-      <span className="text-xl font-bold text-gray-900" style={{ fontFamily: 'Ethnocentric, sans-serif' }}>
-        HARDROCK
-      </span>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <a href="#home" className="block">
+            <div className="flex items-center space-x-2">
+              <div className="h-10 w-75 rounded-md overflow-hidden">
+                <img
+                  src="/hardrock-logo.png"
+                  alt="Hardrock Logo"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            </div>
+          </a>
 
-      {/* Logo on the right of the text */}
-      <div className="h-10 w-10 rounded-md overflow-hidden">
-        <img
-          src="/viber_image_2025-05-14_11-59-42-141.png"
-          alt="Hardrock Logo"
-          className="h-full w-full object-contain"
-        />
-      </div>
-    </div>
-
-    <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
-              className="text-gray-900 hover:text-amber-500 font-medium transition-colors"
-            >
-              Home
+              className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
+            >Home
             </a>
             <a
               href="#portfolio"
-              className="text-gray-900 hover:text-amber-500 font-medium transition-colors"
+              className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
             >
               Portfolio
             </a>
             <a
-              href="#services"
-              className="text-gray-900 hover:text-amber-500 font-medium transition-colors"
-            >
-              Services
+              href="#products"
+              className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
+            >Products
             </a>
             <a
               href="#testimonials"
-              className="text-gray-900 hover:text-amber-500 font-medium transition-colors"
-            >
-              Testimonials
+              className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
+            >Testimonials
             </a>
             <a
               href="#contact"
-              className="text-gray-900 hover:text-amber-500 font-medium transition-colors"
-            >
-              Contact
+              className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
+            >Contact
             </a>
           </div>
 
@@ -84,7 +75,6 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section
         id="home"
         className="relative h-screen flex items-center justify-center overflow-hidden pt-16"
@@ -92,8 +82,8 @@ const Home = () => {
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop className="w-full h-full object-cover">
             <source
-              src="https://player.vimeo.com/external/371848080.hd.mp4?s=3c1ac3b75d0f4c0c4819d31d5d8176c3bd611c7c&profile_id=175&oauth2_token_id=57447761"
-              type="video/mp4"
+              src=""
+              type=""
             />
           </video>
           <div className="absolute inset-0 bg-black/60"></div>
@@ -106,27 +96,22 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Premium Gravel Mining,
+            Hardrock Aggregates, Inc.
             <br />
-            Sustainable Operations
           </motion.h1>
-
           <motion.p
             className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Professional gravel extraction and aggregate supply services with
-            environmental responsibility and operational excellence.
+            Where <b>Hard</b> Work Meets <b>Rock</b>-Solid Commitment.
           </motion.p>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-
           </motion.div>
         </div>
 
@@ -142,42 +127,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Mining Operations
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore our portfolio of successful gravel mining operations
-              showcasing our expertise and environmental stewardship.
-            </p>
-          </div>
-
           <ProjectPortfolio />
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Services
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We offer a comprehensive range of gravel mining and aggregate
-              supply services tailored to meet your specific needs.
-            </p>
-          </div>
-
+      <section id="services" className="bg-gray-50 scroll-mt-32">
+        <div>
           <ServicesSection />
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gray-900 text-white">
+      <section id="testimonials" className="py-20 bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -215,8 +177,8 @@ const Home = () => {
                         className="w-10 h-10 rounded-full mr-4"
                       />
                       <div>
-                        <p className="font-medium">{testimonial.name}</p>
-                        <p className="text-sm text-gray-400">
+                        <p className="font-medium text-gray-300">{testimonial.name}</p>
+                        <p className="text-sm text-gray-300">
                           {testimonial.project}
                         </p>
                       </div>
@@ -229,54 +191,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-amber-500">
+      <section className="py-16 bg-gray-300">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-2">
                   {stat.value}
                 </div>
-                <div className="text-lg text-white/80">{stat.label}</div>
+                <div className="text-lg text-black/80">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="bg-gray-50 scroll-mt-32">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Contact Us
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ready to source quality gravel? Get in touch with us today for a
-              free consultation and quote.
-            </p>
-          </div>
-
           <ContactSection />
         </div>
       </section>
 
-{/* Footer */}
-<footer className="bg-gray-900 text-white py-12">
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <div className="flex items-center space-x-2 mb-4">
-          <span className="text-xl font-bold">HARDROCK</span>
-          <div className="h-10 w-10 rounded-md overflow-hidden flex items-center justify-center">
-            <img
-              src="/viber_image_2025-05-14_11-59-42-141.png"
-              alt="HARDROCK"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>  
+      <footer className="bg-white text-black py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="h-10 w-75 rounded-md overflow-hidden flex items-left justify-left">
+                  <img
+                    src="/hardrock-logo.png"
+                    alt="HARDROCK"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
               <p className="text-gray-400 mb-4">
                 Premium gravel mining services with unmatched quality and
                 environmental responsibility.
@@ -284,7 +232,7 @@ const Home = () => {
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-black transition-colors"
                 >
                   <svg
                     className="w-6 h-6"
@@ -301,7 +249,7 @@ const Home = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-black transition-colors"
                 >
                   <svg
                     className="w-6 h-6"
@@ -318,7 +266,7 @@ const Home = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-black transition-colors"
                 >
                   <svg
                     className="w-6 h-6"
@@ -338,41 +286,36 @@ const Home = () => {
                 <li>
                   <a
                     href="#home"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Home
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Home
                   </a>
                 </li>
                 <li>
                   <a
                     href="#portfolio"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Portfolio
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Portfolio
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#services"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Services
+                    href="#products"
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Services
                   </a>
                 </li>
                 <li>
                   <a
                     href="#testimonials"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Testimonials
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Testimonials
                   </a>
                 </li>
                 <li>
                   <a
                     href="#contact"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Contact
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Contact
                   </a>
                 </li>
               </ul>
@@ -384,41 +327,36 @@ const Home = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Aggregate Supply
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Aggregate Supply
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Bulk Gravel Sales
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Bulk Gravel Sales
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Custom Screening
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Custom Screening
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Site Preparation
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Site Preparation
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Logistics Management
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Logistics Management
                   </a>
                 </li>
               </ul>
@@ -428,18 +366,18 @@ const Home = () => {
               <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <MapPin className="w-5 h-5 text-amber-500 mr-3 mt-1" />
+                  <MapPin className="w-10 h-10 text-black mr-3 mt-1" />
                   <span className="text-gray-400">
-                    456 Mining Road, Gravel Valley, GV 67890
+                    10F ORE Central Bldg., 9th Avenue cor. 31st Street BGC, Taguig City, Metro Manila, Philippines 1634
                   </span>
                 </li>
                 <li className="flex items-center">
-                  <Phone className="w-5 h-5 text-amber-500 mr-3" />
-                  <span className="text-gray-400">(555) 123-4567</span>
+                  <Phone className="w-5 h-5 text-black mr-3" />
+                  <span className="text-gray-400">(+632) 889-1129, 889-1130, 889-1132</span>
                 </li>
                 <li className="flex items-center">
-                  <Mail className="w-5 h-5 text-amber-500 mr-3" />
-                  <span className="text-gray-400">info@gravelmax.com</span>
+                  <Mail className="w-5 h-5 text-black mr-3" />
+                  <span className="text-gray-400">hardrockaggregatesinc@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -457,7 +395,6 @@ const Home = () => {
   );
 };
 
-// Sample data for testimonials
 const testimonials = [
   {
     name: "Sarah Johnson",
@@ -482,7 +419,6 @@ const testimonials = [
   },
 ];
 
-// Sample data for stats
 const stats = [
   { value: "500K+", label: "Tons Extracted" },
   { value: "20+", label: "Years Experience" },

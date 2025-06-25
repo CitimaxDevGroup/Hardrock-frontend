@@ -133,7 +133,7 @@ const ProjectPortfolio = () => {
               onClick={() => setFilter(category)}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                 filter === category
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gray-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
               initial={{ opacity: 0, y: -10 }}
