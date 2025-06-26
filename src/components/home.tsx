@@ -226,12 +226,12 @@ const Home = () => {
                 </div>
               </div>
               <p className="text-gray-400 mb-4">
-                Premium gravel mining services with unmatched quality and
-                environmental responsibility.
+                Where Hard Work Meets Rock-Solid Commitment.
+                {/* Where <b>Hard</b> Work Meets <b>Rock</b>-Solid Commitment. */}
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="http://facebook.com/hardrockaggregatesinc/"
                   className="text-gray-400 hover:text-black transition-colors"
                 >
                   <svg
@@ -248,7 +248,7 @@ const Home = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/hardrock_aggregates/"
                   className="text-gray-400 hover:text-black transition-colors"
                 >
                   <svg
@@ -265,7 +265,7 @@ const Home = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href=""
                   className="text-gray-400 hover:text-black transition-colors"
                 >
                   <svg

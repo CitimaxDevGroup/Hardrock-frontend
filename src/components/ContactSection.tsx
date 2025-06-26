@@ -28,7 +28,6 @@ const ContactSection = ({
   address = "10F ORE Central Bldg., 9th Avenue cor. 31st Street BGC, Taguig City, Metro Manila, Philippines 1634",
   phone = "(+632) 889-1129, 889-1130, 889-1132",
   email = "hardrockaggregatesinc@gmail.com",
-  // mapUrl ="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2096.4178990704418!2d121.04805632002314!3d14.551735509488678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8f3ddb01e3d%3A0xde4730bf1c9ae667!2sORE%20Central!5e1!3m2!1sen!2sph!4v1750314491871!5m2!1sen!2sph",
 }: ContactSectionProps) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -75,7 +74,7 @@ const ContactSection = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <Card className="shadow-lg">
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
+              <h3 className="text-xl font-semibold mb-4">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
@@ -116,37 +115,12 @@ const ContactSection = ({
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="projectType">Project Type</Label>
-                  <Select
-                    onValueChange={handleSelectChange}
-                    value={formData.projectType}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select project type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="aggregate">
-                        Aggregate Supply
-                      </SelectItem>
-                      <SelectItem value="bulk">Bulk Gravel Sales</SelectItem>
-                      <SelectItem value="screening">
-                        Custom Screening
-                      </SelectItem>
-                      <SelectItem value="delivery">
-                        Delivery Services
-                      </SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
                   <Label htmlFor="message">Project Details</Label>
                   <Textarea
                     id="message"
                     name="message"
                     placeholder="Tell us about your gravel needs..."
-                    rows={5}
+                    rows={2}
                     value={formData.message}
                     onChange={handleChange}
                     required
