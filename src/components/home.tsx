@@ -91,7 +91,7 @@ const Home = () => {
 
         <div className="container mx-auto px-4 z-10 text-center">
           <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-2xl md:text-6xl font-bold text-white mb-0 md:mb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -100,7 +100,7 @@ const Home = () => {
             <br />
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto"
+            className="text-sm md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}

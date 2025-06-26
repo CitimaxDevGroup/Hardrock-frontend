@@ -7,76 +7,35 @@ interface Project {
   title: string;
   description: string;
   category: string;
-  beforeImage: string;
-  afterImage: string;
+  image: string;
 }
 
 const defaultProjects: Project[] = [
   {
     id: "1",
-    title: "Riverside Gravel Pit",
-    description:
-      "Large-scale gravel extraction operation producing high-quality aggregate for regional infrastructure projects.",
+    title: "HAI MPSA AREA (45 hectares)",
+    description: `The HAI MPSA area is located in Barangay Cupang, Antipolo City with a total approved area of 45 hectares. It is bounded by two major river systems, namely; Kaybibit River and Nangka River. The MPSA was issued by the Department of Environment and Natural Resources on June 17, 2004. 
+    \nThe whole 45-hectare area is underlain by massive basalt/andesite deposits of the Kinabuan Formation consisting mainly of altered spillitic basalt flows with intercalated, highly indurated sandstone, shale and chert beds. This type of basalt is the most ideal rock sought by the construction industry. The area is overlain by thin soil overburden materials ranging from 0.5 meters to 1.5 meters. Average thickness is set at 1.0 meter. However, a thick oxidized or weathered layer of about 10 – 15 meters occurs before fresh basalt materials are exposed.`,
     category: "Extraction",
-    beforeImage:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-    afterImage:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&q=80",
+    image:
+      "/project1.png",
   },
   {
     id: "2",
-    title: "Highway 401 Aggregate Supply",
-    description:
-      "Supplied over 50,000 tons of premium gravel for major highway expansion project with strict quality specifications.",
-    category: "Infrastructure",
-    beforeImage:
-      "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=800&q=80",
-    afterImage:
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
+    title: "Quarry Operation",
+    description: `The company employs a contour mining method with about five (5) active benches from BL 74 to BL 130. The quarry benches have a width of 12 meters and a height of 9 meters trending in an east west direction. The active quarry area is about 10 hectares.
+    \nThe quarry development (stripping) and waste disposal utilizes one (1) Caterpillar D8N bulldozer to expose fresh basalt. Drilling and blasting are done by a blasting contractor, BM Equipment and Resources Inc. using three (3) units 75mm diameter capacity hydraulic crawler drills. Loading operation are being done using three (3) units excavators, namely a VOLVO EC460 and 2 units VOLVO EC290 while hauling operations involves six (6) units Caterpillar 769B off-highway dump trucks.`,
+    category: "Quarry",
+    image:
+      "/project2.png",
   },
   {
     id: "3",
-    title: "Commercial Screening Plant",
-    description:
-      "State-of-the-art screening and washing facility producing multiple grades of aggregate for commercial applications.",
-    category: "Processing",
-    beforeImage:
-      "https://images.unsplash.com/photo-1565636252824-5a0a7f7f0de9?w=800&q=80",
-    afterImage:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-  },
-  {
-    id: "4",
-    title: "Residential Development Supply",
-    description:
-      "Consistent supply of decorative and structural gravel for large residential development project over 18 months.",
-    category: "Residential",
-    beforeImage:
-      "https://images.unsplash.com/photo-1519567770579-c2fc5e9c5208?w=800&q=80",
-    afterImage:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
-  },
-  {
-    id: "5",
-    title: "Environmental Restoration",
-    description:
-      "Sustainable mining operation with comprehensive site restoration including wetland creation and native vegetation.",
-    category: "Environmental",
-    beforeImage:
-      "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=800&q=80",
-    afterImage:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-  },
-  {
-    id: "6",
-    title: "Custom Aggregate Blending",
-    description:
-      "Specialized blending operation creating custom aggregate mixes for unique engineering applications.",
-    category: "Specialty",
-    beforeImage:
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
-    afterImage:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&q=80",
+    title: "Crushing Plants",
+    description: `The company operates and maintains two (2) complete assembly rock crushing plant for the production of various aggregates and road base materials used in the construction industry. The main crushing plant, Plant No.1 is a 300 TPH capacity three stage rock processing plant using Nordberg (METSO) crushing equipments while Plant No.2 is a 100 TPH capacity two stage rock processing plant.`,
+    category: "Crushing",
+    image:
+      "/project3.png",
   },
 ];
 
@@ -105,7 +64,7 @@ const ProjectPortfolio = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50" id="portfolio">
+    <section className="bg-gray-50" id="portfolio">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2
@@ -114,7 +73,7 @@ const ProjectPortfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Our Mining Operations
+            Quarry & Crushing Operations
           </motion.h2>
           <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto"
@@ -122,7 +81,7 @@ const ProjectPortfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Explore our successful gravel mining projects showcasing quality extraction and environmental stewardship.
+            Discover our quarry and crushing operations delivering high-quality aggregates with precision and sustainability.
           </motion.p>
         </div>
 
@@ -131,11 +90,10 @@ const ProjectPortfolio = () => {
             <motion.button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                filter === category
-                  ? "bg-gray-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${filter === category
+                ? "bg-gray-600 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
+                }`}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
@@ -155,7 +113,14 @@ const ProjectPortfolio = () => {
           >
             {filteredProjects.map((project) => (
               <motion.div key={project.id} variants={itemVariants}>
-                <ProjectCard project={project} onClick={() => setSelectedProject(project)} />
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  category={project.category}
+                  imageUrl={project.image}
+                  onClick={() => setSelectedProject(project)}
+                />
               </motion.div>
             ))}
           </motion.div>
@@ -169,44 +134,33 @@ const ProjectPortfolio = () => {
           <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center p-4">
             <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
               <div className="p-6">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-2xl font-bold">{selectedProject.title}</h3>
-                  <button
+                <div className="flex justify-center mb-4">
+                  <h3 className="text-3xl font-bold text-center">{selectedProject.title}</h3>
+                  {/* <button
                     onClick={() => setSelectedProject(null)}
                     aria-label="Close"
                     className="text-gray-500 hover:text-gray-700"
                   >
                     ✕
-                  </button>
+                  </button> */}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">Before</p>
-                    <img
-                      src={selectedProject.beforeImage}
-                      alt="Before"
-                      className="w-full h-64 object-cover rounded-lg"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 mb-1">After</p>
-                    <img
-                      src={selectedProject.afterImage}
-                      alt="After"
-                      className="w-full h-64 object-cover rounded-lg"
-                    />
-                  </div>
+                <div className="flex justify-center mb-2">
+                  <img
+                    src={selectedProject.image}
+                    alt="Image"
+                    className="w-[900px] h-[450px] object-cover rounded-lg"
+                  />
                 </div>
 
-                <div className="mb-6">
-                  <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="mb-2">
+                  <span className="inline-block bg-gray-200 text-gray-800 text-xs font-semibold px-3 py-1 rounded-full">
                     {selectedProject.category}
                   </span>
                 </div>
-                <p className="text-gray-700">{selectedProject.description}</p>
-
-                <div className="flex justify-end mt-6">
+                
+                <p className="text-gray-700 whitespace-pre-line text-justify mb-2 leading-snug [&>p]:my-1">{selectedProject.description}</p>
+                <div className="flex justify-end">
                   <button
                     onClick={() => setSelectedProject(null)}
                     className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
