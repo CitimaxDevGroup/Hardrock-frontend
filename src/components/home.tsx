@@ -6,6 +6,64 @@ import { Card, CardContent } from "./ui/card";
 import ProjectPortfolio from "./ProjectPortfolio";
 import ServicesSection from "./ServicesSection";
 import ContactSection from "./ContactSection";
+import InfoSection from "./InfoSection";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
+
+const teamMembers = [
+  {
+    name: 'ALONZO C. ESPAÑOLA',
+    role: 'President',
+    image: "/hr-logo.png",
+  },
+  {
+    name: 'ENGR. MATIAS B. JOSOL',
+    role: 'Project Manager',
+    image: '/hr-logo.png',
+  },
+  {
+    name: 'ENGR. JOEL A. FETALCO',
+    role: 'Plant Manager',
+    image: '/hr-logo.png',
+  },
+  {
+    name: 'NERISSA P. SALAZAR',
+    role: 'Admin & Sales Head',
+    image: '/team/Salazar.png',
+  },
+  {
+    name: 'MAY ANNE DE CHAVEZ',
+    role: 'Purchaser',
+    image: '/team/DeChavez.png',
+  },
+  {
+    name: 'ENGR. DON PEPING M. AQUINO',
+    role: 'PCO/Compliance Officer',
+    image: '/hr-logo.png',
+  },
+  {
+    name: 'ENGR. EJIBELLE A. ZARAGOSA',
+    role: 'ComRel',
+    image: '/hr-logo.png',
+  },
+  {
+    name: 'ENGR. CHRISTINE JOY M. ABRIQUE',
+    role: 'Safety Engineer',
+    image: '/hr-logo.png',
+  },
+  {
+    name: 'ENGR. ISRAEL ACE V. CENTRO',
+    role: 'MEPEO',
+    image: '/hr-logo.png',
+  },
+  {
+    name: 'ENGR. ELAINE QUIROS',
+    role: 'Quarry Supervisor',
+    image: '/hr-logo.png',
+  },
+];
 
 const Home = () => {
   return (
@@ -23,12 +81,17 @@ const Home = () => {
               </div>
             </div>
           </a>
-
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
               className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
             >Home
+            </a>
+            <a
+              href="#info"
+              className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
+            >
+              Policies
             </a>
             <a
               href="#portfolio"
@@ -42,9 +105,9 @@ const Home = () => {
             >Products
             </a>
             <a
-              href="#testimonials"
+              href="#officers"
               className="text-gray-900 hover:underline hover:decoration-black font-medium transition-colors"
-            >Testimonials
+            >Officers
             </a>
             <a
               href="#contact"
@@ -80,11 +143,15 @@ const Home = () => {
         className="relative h-screen flex items-center justify-center overflow-hidden pt-16"
       >
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop className="w-full h-full object-cover">
-            <source
-              src="/Hero.mp4"
-              type="video/mp4"
-            />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
@@ -120,22 +187,91 @@ const Home = () => {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
-            <a href="#portfolio" className="text-white">
+            <a href="#info" className="text-white">
               <ChevronDown size={36} />
             </a>
           </motion.div>
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 bg-gray-50">
+      <section id="info" className="py-12 bg-gray-50 scroll-mt-[50px]">
+        <div className="container mx-auto px-4">
+          <InfoSection />
+        </div>
+      </section>
+
+      <section id="portfolio" className="scroll-mt-[75px] py-6 bg-gray-50">
         <div className="container mx-auto px-4">
           <ProjectPortfolio />
         </div>
       </section>
 
-      <section id="products" className="bg-gray-50 scroll-mt-32">
+      <section id="products" className="scroll-mt-[35px] pt-16 bg-gray-50 ">
         <div>
           <ServicesSection />
+        </div>
+      </section>
+
+      <section className="!scroll-mt-20 relative py-10 md:py-14 xl:py-16 !bg-gray-50 mb-5" id="officers">
+        <div
+          className="shape absolute z-[1] w-24 h-24 rounded-full bg-[#B0B0B0] right-0 bottom-2 translate-x-1/2"
+        />
+        <div
+          className="shape absolute z-[1] w-24 h-24 rounded-full bg-[#B0B0B0] opacity-50 top-2 left-0 -translate-x-1/2"
+        />
+        <div className="text-center max-w-4xl mx-auto mb-12 px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-slate mb-1"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >Meet Our Team!
+          </motion.h2>
+          <motion.p
+            className="text-lg text-slate-600 max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          > Get to know the passionate professionals behind <span className="font-bold text-gray-700"> Hardrock Aggregates, Inc. </span>
+            — dedicated team of experts committed to producing high-quality construction aggregates and driving innovation in every phase of extraction, processing, and delivery.
+          </motion.p>
+        </div>
+        <div className="px-4">
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView={1}
+            spaceBetween={20}
+            pagination={{ clickable: true }}
+            loop={true}
+            speed={4000}
+            autoplay={{ delay: 500 }}
+            breakpoints={{
+              640: { slidesPerView: 1.5 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+              1280: { slidesPerView: 4 },
+            }}
+          >
+            {teamMembers.map((member, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-white shadow-lg rounded-xl p-6 text-center h-60">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-20 h-20 rounded-full mx-auto mb-4"
+                  />
+                  <h4 className="text-lg font-semibold mb-1">{member.name}</h4>
+                  <p className="text-xs uppercase tracking-wider text-gray-400 mb-2">
+                    {member.role}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Hardrock Aggregates, Inc.
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+            <div className="swiper-pagination mt-20 mb-0 !relative" />
+          </Swiper>
         </div>
       </section>
 
@@ -206,7 +342,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="contact" className="bg-gray-50 scroll-mt-32">
+      <section id="contact" className="bg-gray-50 scroll-mt-[35px]">
         <div className="container mx-auto px-4">
           <ContactSection />
         </div>
@@ -214,7 +350,7 @@ const Home = () => {
 
       <footer className="bg-white text-black py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="h-10 w-75 rounded-md overflow-hidden flex items-left justify-left">
@@ -232,6 +368,8 @@ const Home = () => {
               <div className="flex space-x-4">
                 <a
                   href="http://facebook.com/hardrockaggregatesinc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-black transition-colors"
                 >
                   <svg
@@ -292,6 +430,13 @@ const Home = () => {
                 </li>
                 <li>
                   <a
+                    href="#info"
+                    className="text-gray-400 hover:text-black transition-colors"
+                  >Policies
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="#portfolio"
                     className="text-gray-400 hover:text-black transition-colors"
                   >Portfolio
@@ -301,14 +446,7 @@ const Home = () => {
                   <a
                     href="#products"
                     className="text-gray-400 hover:text-black transition-colors"
-                  >Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#testimonials"
-                    className="text-gray-400 hover:text-black transition-colors"
-                  >Testimonials
+                  >Products
                   </a>
                 </li>
                 <li>
@@ -316,47 +454,6 @@ const Home = () => {
                     href="#contact"
                     className="text-gray-400 hover:text-black transition-colors"
                   >Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-black transition-colors"
-                  >Aggregate Supply
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-black transition-colors"
-                  >Bulk Gravel Sales
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-black transition-colors"
-                  >Custom Screening
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-black transition-colors"
-                  >Site Preparation
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-black transition-colors"
-                  >Logistics Management
                   </a>
                 </li>
               </ul>

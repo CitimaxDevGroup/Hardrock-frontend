@@ -94,13 +94,13 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
         "100 % blasted rock — Sizes ranges from 500 mm to 1500 mm",
       icon: <Mountain className="w-8 h-8 text-white" />,
     },
-     {
+    {
       title: "Sub-base Materials (Quarry Product)",
       description:
-        "100 % screen quarry materials — 0 mm to 75 mm Maximum of 2in (DPWH 200)",
+        "100 % screen quarry materials — 0 mm to 75 mm Maximum of 2in",
       icon: <Mountain className="w-8 h-8 text-white" />,
     },
-     {
+    {
       title: "Fill Materials (Quarry Product)",
       description:
         "100 % stripped materials — 0 mm to 75 mm",
@@ -131,7 +131,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
             {subtitle}
           </motion.p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
             <motion.div
               key={service.title}
