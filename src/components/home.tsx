@@ -150,7 +150,7 @@ const Home = () => {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/1.mp4" type="video/mp4" />
+            <source src="/0702.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black/60"></div>
