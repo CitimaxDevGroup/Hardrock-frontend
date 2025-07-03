@@ -65,6 +65,37 @@ const teamMembers = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
+    quote:
+      "Hardrock Aggregates, Inc. provided consistent, high-quality aggregate for our road construction project. Their delivery schedule was reliable and their material met all specifications.",
+    project: "Highway Construction",
+  },
+  {
+    name: "Michael Thompson",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=michael",
+    quote:
+      "We've been sourcing gravel from Hardrock Aggregates, Inc. for years. Their environmental practices and quality control are outstanding. Highly recommended for any project.",
+    project: "Commercial Development",
+  },
+  {
+    name: "Emily Rodriguez",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=emily",
+    quote:
+      "The team at Hardrock Aggregates, Inc. worked closely with us to provide custom-screened materials for our landscaping project. Professional service from start to finish.",
+    project: "Landscape Supply",
+  },
+];
+
+const stats = [
+  { value: "500K+", label: "Tons Extracted" },
+  { value: "20+", label: "Years Experience" },
+  { value: "35+", label: "Team Members" },
+  { value: "98%", label: "Client Satisfaction" },
+];
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
@@ -143,23 +174,22 @@ const Home = () => {
         className="relative h-screen flex items-center justify-center overflow-hidden pt-16"
       >
         <div className="absolute inset-0 z-0">
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="w-full h-full object-cover"
-  >
-    <source
-      src="https://res.cloudinary.com/dvzj4dgsx/video/upload/v1751342109/HAI_1_s0zfoj.mp4"
-      type="video/mp4"
-    />
-    Your browser does not support the video tag.
-  </video>
-  <div className="absolute inset-0 bg-black/60"></div>
-</div>
-
-
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source
+              src="https://res.cloudinary.com/dvzj4dgsx/video/upload/v1751342109/HAI_1_s0zfoj.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        
         <div className="container mx-auto px-4 z-10 text-center">
           <motion.h1
             className="text-2xl md:text-6xl font-bold text-white mb-0 md:mb-2"
@@ -495,36 +525,5 @@ const Home = () => {
     </div>
   );
 };
-
-const testimonials = [
-  {
-    name: "Sarah Johnson",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
-    quote:
-      "GravelMax provided consistent, high-quality aggregate for our road construction project. Their delivery schedule was reliable and their material met all specifications.",
-    project: "Highway Construction",
-  },
-  {
-    name: "Michael Thompson",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=michael",
-    quote:
-      "We've been sourcing gravel from GravelMax for years. Their environmental practices and quality control are outstanding. Highly recommended for any project.",
-    project: "Commercial Development",
-  },
-  {
-    name: "Emily Rodriguez",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=emily",
-    quote:
-      "The team at GravelMax worked closely with us to provide custom-screened materials for our landscaping project. Professional service from start to finish.",
-    project: "Landscape Supply",
-  },
-];
-
-const stats = [
-  { value: "500K+", label: "Tons Extracted" },
-  { value: "20+", label: "Years Experience" },
-  { value: "35+", label: "Team Members" },
-  { value: "98%", label: "Client Satisfaction" },
-];
 
 export default Home;
